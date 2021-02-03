@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Prectics two</title>
+</head>
+
+<body>
+    <h1 id="api">API Prectics two</h1>
+    <script>
+        fetch('https://randomuser.me/api/')
+            .then((rcv) => rcv.json())
+            .then((data) => {
+                // console.log(data.results[0]);
+
+                const user = data.results[0];
+                const name = user.name;
+                const fullName = `${name.title} ${name.first}`;
+                document.getElementById('api').innerText = fullName;
+                //
+            });
+    </script>
+</body>
+
+</html>
