@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json prectics</title>
+</head>
+
+<body>
+    <h1>JSON</h1>
+
+    <script>
+        const obj = {
+            name: 'salman Khan',
+            age: 29,
+            id: 1223,
+        };
+
+        const objson = JSON.stringify(obj);
+        console.log(objson);
+        const objFromJson = JSON.parse(objson);
+        console.log(objFromJson);
+
+        const person = {
+            name: 'saimon',
+            id: 138028239,
+            job: 'not working ',
+            age: 24,
+        };
+
+        const transfarInJson = JSON.stringify(person);
+        console.log(transfarInJson);
+        const transfarInObject = JSON.parse(transfarInJson);
+        console.log(transfarInObject);
+    </script>
+</body>
+
+</html>
