@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jsondata load</title>
+</head>
+<div>
+    <ul id="container"></ul>
+</div>
+
+<body>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((json) => userData(json));
+
+        function userData(user) {
+            const data = user.map((x) => {
+                const li = document.createElement('li');
+                li.innerText = x.name;
+
+                const ul = document.getElementById('container');
+                ul.appendChild(li);
+            });
+        }
+    </script>
+</body>
+
+</html>
