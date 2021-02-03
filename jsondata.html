@@ -14,15 +14,18 @@
     <script>
         fetch('https://jsonplaceholder.typicode.com/users')
             .then((response) => response.json())
-            .then((json) => userData(json));
+            .then((json) => data(json));
 
-        function userData(user) {
-            const data = user.map((x) => {
+        function data(user) {
+            user.map((x) => {
                 const li = document.createElement('li');
                 li.innerText = x.name;
-
                 const ul = document.getElementById('container');
                 ul.appendChild(li);
+                ul.style.background = 'red';
+                ul.style.padding = '50px';
+                li.style.padding = '10px';
+                li.style.color = 'white';
             });
         }
     </script>

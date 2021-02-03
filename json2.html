@@ -8,7 +8,11 @@
 </head>
 
 <body>
-    <h1>this is heading</h1>
+    <!-- my div  -->
+    <div id="container"></div>
+    <div id="con"></div>
+
+    <!-- user  input value  -->
 
     <input id="name" type="text" placeholder="type your name " /> <br />
     <br />
@@ -36,18 +40,20 @@
                     },
                 })
                 .then((response) => response.json())
-                .then((data) => console.log(data));
+                .then((data) => dataConnection(data));
         }
 
-        // function userData(user) {
-        //     const data = user.map((x) => {
-        //         const li = document.createElement('li');
-        //         li.innerText = x.name;
+        function dataConnection(receive) {
+            const div = document.createElement('div');
+            div.innerText = receive.name;
+            const div2 = document.createElement('div');
+            div2.innerText = receive.password;
+            div.style.color = 'red';
 
-        //         const ul = document.getElementById('container');
-        //         ul.appendChild(li);
-        //     });
-        // }
+            const container = document.getElementById('container');
+            container.appendChild(div);
+            container.appendChild(div2);
+        }
     </script>
 </body>
 
