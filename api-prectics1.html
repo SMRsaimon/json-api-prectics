@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="activity-link"></h1>
+
+    <script>
+        function letsFun() {
+            fetch('http://www.boredapi.com/api/activity/')
+                .then((rev) => rev.json())
+                .then((data) => {
+                    document.getElementById('activity-link').innerText = data.activity;
+                });
+        }
+
+        setInterval(() => {
+            letsFun();
+        }, 100);
+    </script>
+</body>
+
+</html>
