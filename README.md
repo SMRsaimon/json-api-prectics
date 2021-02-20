@@ -1,1 +1,1 @@
-# json-api-prectics
+# json-api-prectics> post method
